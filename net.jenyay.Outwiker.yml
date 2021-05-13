@@ -19,8 +19,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/Jenyay/outwiker
-        commit: 92735a55330df4350f02d8d60075ebb9e3efc47b
-        tag: flatpak-2
+        commit: 45b9826dd57c1cccfb7ee8f2edb71a25c6628649
+        tag: stable_3.0.0.888
     build-commands:
       - make -f Makefile.flatpak install
   - "python3-modules.json"
