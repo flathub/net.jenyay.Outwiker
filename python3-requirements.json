@@ -4,20 +4,6 @@
     "build-commands": [],
     "modules": [
         {
-            "name": "python3-numpy",
-            "buildsystem": "simple",
-            "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"numpy==1.20.0\" --no-build-isolation"
-            ],
-            "sources": [
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/c3/97/fd507e48f8c7cab73a9f002e52e15983b5636b4ac6cf69b83ae240324b44/numpy-1.20.0.zip",
-                    "sha256": "3d8233c03f116d068d5365fed4477f2947c7229582dad81e5953088989294cec"
-                }
-            ]
-        },
-        {
             "name": "python3-wxPython",
             "buildsystem": "simple",
             "build-commands": [
@@ -31,8 +17,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/c3/97/fd507e48f8c7cab73a9f002e52e15983b5636b4ac6cf69b83ae240324b44/numpy-1.20.0.zip",
-                    "sha256": "3d8233c03f116d068d5365fed4477f2947c7229582dad81e5953088989294cec"
+                    "url": "https://files.pythonhosted.org/packages/e9/6c/c0a8130fe198f27bab92f1b28631e0cc2572295f6b7a31e87efe7448aa1c/numpy-1.22.2.zip",
+                    "sha256": "076aee5a3763d41da6bef9565fdf3cb987606f567cd8b104aded2b38b7b47abf"
                 },
                 {
                     "type": "file",
@@ -73,13 +59,13 @@
             "name": "python3-pyparsing",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pyparsing==2.4.7\" --no-build-isolation"
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pyparsing==3.0.7\" --no-build-isolation"
             ],
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/c1/47/dfc9c342c9842bbe0036c7f763d2d6686bcf5eb1808ba3e170afdb282210/pyparsing-2.4.7.tar.gz",
-                    "sha256": "c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1"
+                    "url": "https://files.pythonhosted.org/packages/d6/60/9bed18f43275b34198eb9720d4c1238c68b3755620d20df0afd89424d32b/pyparsing-3.0.7.tar.gz",
+                    "sha256": "18ee9022775d270c55187733956460083db60b37d0d0fb357445f3094eed3eea"
                 }
             ]
         },
@@ -115,7 +101,7 @@
             "name": "python3-psutil",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"psutil>=2.1.0\" --no-build-isolation"
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"psutil==5.9.0\" --no-build-isolation"
             ],
             "sources": [
                 {
