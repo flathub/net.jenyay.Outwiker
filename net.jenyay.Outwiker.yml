@@ -19,7 +19,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/Jenyay/outwiker
-        commit: 1e06e4988ca18c940609f5d1880ee97fa56be7d9
+        commit: 53b33789b94cbc7cfb45e7b6ba200ef3d8cd6ee1
         # tag: stable_3.0.0.888
     build-commands:
       - make -f Makefile.flatpak install
