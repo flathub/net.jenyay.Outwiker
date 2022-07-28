@@ -1,5 +1,5 @@
 wxPython==4.1.1
-Pillow==9.1.1
+Pillow==9.2.0
 idna>=2.10
 flit_core >=3.2,<4
 pyparsing==3.0.9
