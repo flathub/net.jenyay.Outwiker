@@ -1,4 +1,6 @@
-setuptools==59.8.0
+numpy==1.23.4
+setuptools==59.2.0
+Cython>=0.29.30,<3.0
 wxPython==4.1.1
 Pillow==9.2.0
 idna>=2.10
