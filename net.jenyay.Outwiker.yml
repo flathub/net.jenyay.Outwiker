@@ -1,6 +1,6 @@
 app-id: net.jenyay.Outwiker
 runtime: org.gnome.Platform
-runtime-version: '42'
+runtime-version: '43'
 sdk: org.gnome.Sdk
 command: outwiker
 rename-icon: net.jenyay.Outwiker
@@ -23,6 +23,7 @@ modules:
         # tag: stable_3.0.0.888
     build-commands:
       - make -f Makefile.flatpak install
+  - "python3-numpy.json"
   - "python3-requirements.json"
   - name: cacheman
     buildsystem: simple
