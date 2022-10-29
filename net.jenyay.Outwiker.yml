@@ -1,6 +1,6 @@
 app-id: net.jenyay.Outwiker
 runtime: org.gnome.Platform
-runtime-version: '41'
+runtime-version: '42'
 sdk: org.gnome.Sdk
 command: outwiker
 rename-icon: net.jenyay.Outwiker
@@ -19,15 +19,16 @@ modules:
     sources:
       - type: git
         url: https://github.com/Jenyay/outwiker
-        commit: 1b969711ed501b6c310c6c2e8cfc6e681e2a715d
+        commit: f7a3e76ae39642b963f4d2d697a254e862bcc46e
         # tag: stable_3.0.0.888
     build-commands:
       - make -f Makefile.flatpak install
+  - "python3-numpy.json"
   - "python3-requirements.json"
   - name: cacheman
     buildsystem: simple
     build-commands:
-      - "python3 setup.py install --prefix=${FLATPAK_DEST}"
+      - "python -m pip install . --prefix=${FLATPAK_DEST}"
     sources:
       - type: git
         url: https://github.com/Jenyay/py_cache_manager
@@ -35,7 +36,7 @@ modules:
   - name: cyhunspell
     buildsystem: simple
     build-commands:
-      - "python3 setup.py install --prefix=${FLATPAK_DEST}"
+      - "python -m pip install . --prefix=${FLATPAK_DEST}"
     sources:
       - type: git
         url: https://github.com/Jenyay/cython_hunspell
