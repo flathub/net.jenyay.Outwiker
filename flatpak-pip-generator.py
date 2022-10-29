@@ -337,6 +337,7 @@ for package in packages:
         print('Append #egg=<pkgname> to the end of the requirement line to fix', file=sys.stderr)
         continue
     elif package.name.casefold() in system_packages:
+        print(f"{package.name} is in system_packages. Skipping.")
         continue
 
     if len(package.extras) > 0:
@@ -369,7 +370,7 @@ for package in packages:
         try:
             print('Generating dependencies for {}'.format(package.name))
             subprocess.run(pip_download + [pkg], check=True, stdout=subprocess.DEVNULL)
-            for filename in os.listdir(tempdir):
+            for filename in sorted(os.listdir(tempdir)):
                 dep_name = get_package_name(filename)
                 if dep_name.casefold() in system_packages:
                     continue
@@ -452,6 +453,7 @@ with open(output_filename, 'w') as output:
 
         OrderedDumper.add_representer(OrderedDict, dict_representer)
 
+        output.write("# Generated with flatpak-pip-generator " + " ".join(sys.argv[1:]) + "\n")
         yaml.dump(pypi_module, output, Dumper=OrderedDumper)
     else:
         output.write(json.dumps(pypi_module, indent=4))
