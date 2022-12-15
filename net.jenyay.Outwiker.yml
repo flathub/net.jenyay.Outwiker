@@ -32,7 +32,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/Jenyay/py_cache_manager
-        commit: aa7fa33dcbc30dbd6b2e62cade5f371f6dbbe2cb
+        commit: 076a8f3d05129b9ca84b83eb9e4e0236655cb8bd
   - name: cyhunspell
     buildsystem: simple
     build-commands:
