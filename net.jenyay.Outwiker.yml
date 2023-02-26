@@ -19,7 +19,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/Jenyay/outwiker
-        commit: 3fa7208238601b0d5b45dbea0dbe8baef88b3c48
+        commit: 1d18d703690e1fc5c909ebab035beea954822823
     build-commands:
       - make -f Makefile.flatpak install
   - "python3-numpy.json"
