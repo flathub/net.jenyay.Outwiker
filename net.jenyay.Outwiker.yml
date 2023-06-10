@@ -19,10 +19,10 @@ modules:
     sources:
       - type: git
         url: https://github.com/Jenyay/outwiker
-        commit: 991357b67ce803d5e423bd94c4e5da893f3fcd02
+        commit: e8509f4fa565a295ac4c7d850e504448d1df9343
     build-commands:
       - make -f Makefile.flatpak install
-  - "python3-numpy.json"
+  #- "python3-numpy.json"
   - "python3-requirements.json"
   - name: cacheman
     buildsystem: simple
