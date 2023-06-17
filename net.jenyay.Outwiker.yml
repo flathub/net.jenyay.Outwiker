@@ -1,6 +1,6 @@
 app-id: net.jenyay.Outwiker
 runtime: org.gnome.Platform
-runtime-version: '42'
+runtime-version: '44'
 sdk: org.gnome.Sdk
 command: outwiker
 rename-icon: net.jenyay.Outwiker
@@ -13,13 +13,35 @@ finish-args:
   - --socket=pulseaudio
   - --filesystem=host
 modules:
+  # Borrowed from: https://github.com/flathub/in.cinny.Cinny/blob/master/in.cinny.Cinny.yml
+  - name: webkit2gtk-4.0
+    sources:
+      - type: archive
+        url: https://webkitgtk.org/releases/webkitgtk-2.38.6.tar.xz
+        sha256: 1c614c9589389db1a79ea9ba4293bbe8ac3ab0a2234cac700935fae0724ad48b
+        x-checker-data:
+          type: html
+          url: https://webkitgtk.org/releases/
+          version-pattern: <a href="webkitgtk\-(2\.38\.\d+)\.tar\.xz">
+          url-template: https://webkitgtk.org/releases/webkitgtk-$version.tar.xz
+    buildsystem: cmake-ninja
+    config-opts:
+      - -DPORT=GTK
+      - -DCMAKE_BUILD_TYPE=Release
+      - -DENABLE_BUBBLEWRAP_SANDBOX=OFF
+      - -DENABLE_DOCUMENTATION=OFF
+      - -DENABLE_GAMEPAD=OFF
+      - -DENABLE_WEBDRIVER=OFF
+      - -DUSE_SOUP2=ON
+    modules:
+      - shared-modules/libsoup/libsoup-2.4.json
   - name: outwiker
     buildsystem: simple
     no-autogen: true
     sources:
       - type: git
         url: https://github.com/Jenyay/outwiker
-        commit: db92fdfb53c2fa7fcb53dffc768468ff6107275b
+        commit: 38560678cd46836f3ed78173d3944ca94100bfe6
     build-commands:
       - make -f Makefile.flatpak install
   - "python3-numpy.json"
