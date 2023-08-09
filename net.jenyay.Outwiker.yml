@@ -41,7 +41,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/Jenyay/outwiker
-        commit: 38560678cd46836f3ed78173d3944ca94100bfe6
+        commit: 97bff9f45fafe60b5508fdcae571ae22e659fa8c
     build-commands:
       - make -f Makefile.flatpak install
   - "python3-numpy.json"
@@ -61,4 +61,4 @@ modules:
     sources:
       - type: git
         url: https://github.com/Jenyay/cython_hunspell
-        commit: 399483cd722c4940f6cbac5aaf30fb078713f524
+        commit: 76a620875ba681a800b0f5ab2be16bf684bae385
