@@ -1,6 +1,6 @@
 app-id: net.jenyay.Outwiker
 runtime: org.gnome.Platform
-runtime-version: '44'
+runtime-version: '45'
 sdk: org.gnome.Sdk
 command: outwiker
 rename-icon: net.jenyay.Outwiker
@@ -27,26 +27,26 @@ modules:
     cleanup:
       - '*'
 
-  - name: libjxl # Remove when 45 is out
-    buildsystem: cmake
-    config-opts:
-      - -DCMAKE_BUILD_TYPE=Release
-      - -DBUILD_TESTING=OFF
-    sources:
-      - type: git
-        url: https://github.com/libjxl/libjxl.git
-        tag: v0.8.2
-        commit: 954b460768c08a147abf47689ad69b0e7beff65e
-        disable-shallow-clone: true
-        x-checker-data:
-          type: git
-          tag-pattern: ^v([\d.]+)$
+  #- name: libjxl # Remove when 45 is out
+  #  buildsystem: cmake
+  #  config-opts:
+  #    - -DCMAKE_BUILD_TYPE=Release
+  #    - -DBUILD_TESTING=OFF
+  #  sources:
+  #    - type: git
+  #      url: https://github.com/libjxl/libjxl.git
+  #      tag: v0.8.2
+  #      commit: 954b460768c08a147abf47689ad69b0e7beff65e
+  #      disable-shallow-clone: true
+  #      x-checker-data:
+  #        type: git
+  #        tag-pattern: ^v([\d.]+)$
 
   - name: webkit2gtk-4.0
     sources:
       - type: archive
-        url: https://webkitgtk.org/releases/webkitgtk-2.42.0.tar.xz
-        sha256: 828f95935861fae583fb8f2ae58cf64c63c178ae2b7c2d6f73070813ad64ed1b
+        url: https://webkitgtk.org/releases/webkitgtk-2.40.5.tar.xz
+        sha256: 7de051a263668621d91a61a5eb1c3771d1a7cec900043d4afef06c326c16037f
         x-checker-data:
           type: html
           url: https://webkitgtk.org/releases/
@@ -61,6 +61,7 @@ modules:
       - -DENABLE_GAMEPAD=OFF
       - -DENABLE_WEBDRIVER=OFF
       - -DUSE_SOUP2=ON
+      - -DUSE_JPEGXL=ON
     modules:
       - shared-modules/libsoup/libsoup-2.4.json
   - name: outwiker
