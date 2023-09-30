@@ -1,6 +1,6 @@
 app-id: net.jenyay.Outwiker
 runtime: org.gnome.Platform
-runtime-version: '44'
+runtime-version: '45'
 sdk: org.gnome.Sdk
 command: outwiker
 rename-icon: net.jenyay.Outwiker
@@ -14,15 +14,27 @@ finish-args:
   - --filesystem=host
 modules:
   # Borrowed from: https://github.com/flathub/in.cinny.Cinny/blob/master/in.cinny.Cinny.yml
+
+  - name: unifdef
+    no-autogen: true
+    make-install-args:
+      - prefix=${FLATPAK_DEST}
+
+    sources:
+      - type: archive
+        url: https://dotat.at/prog/unifdef/unifdef-2.12.tar.xz
+        sha256: 43ce0f02ecdcdc723b2475575563ddb192e988c886d368260bc0a63aee3ac400
+    cleanup:
+      - '*'
   - name: webkit2gtk-4.0
     sources:
       - type: archive
-        url: https://webkitgtk.org/releases/webkitgtk-2.38.6.tar.xz
-        sha256: 1c614c9589389db1a79ea9ba4293bbe8ac3ab0a2234cac700935fae0724ad48b
+        url: https://webkitgtk.org/releases/webkitgtk-2.40.5.tar.xz
+        sha256: 7de051a263668621d91a61a5eb1c3771d1a7cec900043d4afef06c326c16037f
         x-checker-data:
           type: html
           url: https://webkitgtk.org/releases/
-          version-pattern: <a href="webkitgtk\-(2\.38\.\d+)\.tar\.xz">
+          version-pattern: LATEST-STABLE-(\d[\.\d]+\d)
           url-template: https://webkitgtk.org/releases/webkitgtk-$version.tar.xz
     buildsystem: cmake-ninja
     config-opts:
@@ -33,6 +45,7 @@ modules:
       - -DENABLE_GAMEPAD=OFF
       - -DENABLE_WEBDRIVER=OFF
       - -DUSE_SOUP2=ON
+      - -DUSE_JPEGXL=ON
     modules:
       - shared-modules/libsoup/libsoup-2.4.json
   - name: outwiker
@@ -41,7 +54,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/Jenyay/outwiker
-        commit: 97bff9f45fafe60b5508fdcae571ae22e659fa8c
+        commit: 1545c699d233cfe590b1b5a6e19c5c188f0433b0
     build-commands:
       - make -f Makefile.flatpak install
   - "python3-numpy.json"
