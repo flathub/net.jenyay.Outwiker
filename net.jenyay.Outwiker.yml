@@ -29,8 +29,8 @@ modules:
   - name: webkit2gtk-4.0
     sources:
       - type: archive
-        url: https://webkitgtk.org/releases/webkitgtk-2.42.2.tar.xz
-        sha256: 5720aa3e8627f1b9f63252187d4df0f8233ae71d697b1796ebfbe5ca750bd118
+        url: https://webkitgtk.org/releases/webkitgtk-2.42.4.tar.xz
+        sha256: 52288b30bda22373442cecb86f9c9a569ad8d4769a1f97b352290ed92a67ed86
         x-checker-data:
           type: html
           url: https://webkitgtk.org/releases/
@@ -54,15 +54,15 @@ modules:
     sources:
       - type: git
         url: https://github.com/Jenyay/outwiker
-        commit: 09839675c5851eacf27a67ffc8bb3001b78d30c1
+        commit: 3635bee93b3e7822faf83ff51edf9b69a397d58b
     build-commands:
       - make -f Makefile.flatpak install
-  - "python3-numpy.json"
-  - "python3-requirements.json"
+  - python3-numpy.json
+  - python3-requirements.json
   - name: cacheman
     buildsystem: simple
     build-commands:
-      - "python -m pip install . --prefix=${FLATPAK_DEST}"
+      - python -m pip install . --prefix=${FLATPAK_DEST}
     sources:
       - type: git
         url: https://github.com/Jenyay/py_cache_manager
@@ -70,7 +70,7 @@ modules:
   - name: cyhunspell
     buildsystem: simple
     build-commands:
-      - "python -m pip install . --prefix=${FLATPAK_DEST}"
+      - python -m pip install . --prefix=${FLATPAK_DEST}
     sources:
       - type: git
         url: https://github.com/Jenyay/cython_hunspell
