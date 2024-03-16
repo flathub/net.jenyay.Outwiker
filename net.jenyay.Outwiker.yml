@@ -47,6 +47,7 @@ modules:
       - -DUSE_SOUP2=ON
       - -DUSE_JPEGXL=ON
       - -DUSE_GTK4=OFF
+      - -DUSE_LIBBACKTRACE=OFF
     modules:
       - shared-modules/libsoup/libsoup-2.4.json
   - name: outwiker
