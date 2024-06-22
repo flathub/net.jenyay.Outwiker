@@ -1,6 +1,6 @@
 app-id: net.jenyay.Outwiker
 runtime: org.gnome.Platform
-runtime-version: '45'
+runtime-version: '46'
 sdk: org.gnome.Sdk
 command: outwiker
 rename-icon: net.jenyay.Outwiker
@@ -29,8 +29,8 @@ modules:
   - name: webkit2gtk-4.0
     sources:
       - type: archive
-        url: https://webkitgtk.org/releases/webkitgtk-2.42.5.tar.xz
-        sha256: b64278c1f20b8cfdbfb5ff573c37d871aba74a1db26d9b39f74e8953fe61e749
+        url: https://webkitgtk.org/releases/webkitgtk-2.44.2.tar.xz
+        sha256: 523f42c8ff24832add17631f6eaafe8f9303afe316ef1a7e1844b952a7f7521b
         x-checker-data:
           type: html
           url: https://webkitgtk.org/releases/
@@ -46,6 +46,8 @@ modules:
       - -DENABLE_WEBDRIVER=OFF
       - -DUSE_SOUP2=ON
       - -DUSE_JPEGXL=ON
+      - -DUSE_GTK4=OFF
+      - -DUSE_LIBBACKTRACE=OFF
     modules:
       - shared-modules/libsoup/libsoup-2.4.json
   - name: outwiker
@@ -54,7 +56,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/Jenyay/outwiker
-        commit: 307e437f4f1920aa6a434727b9e75d33cb734469
+        commit: f6f708f4850c693cb71a066f685125805dd2b2a9
     build-commands:
       - make -f Makefile.flatpak install
   - python3-numpy.json
