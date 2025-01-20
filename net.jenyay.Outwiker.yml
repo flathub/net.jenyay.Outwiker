@@ -29,8 +29,8 @@ modules:
   - name: webkit2gtk-4.0
     sources:
       - type: archive
-        url: https://webkitgtk.org/releases/webkitgtk-2.46.4.tar.xz
-        sha256: 0eff5f0ab0a2872ec87df62bc32e3289c8af625716ac71e94b298d74e0374176
+        url: https://webkitgtk.org/releases/webkitgtk-2.46.5.tar.xz
+        sha256: bad4020bb0cfb3e740df3082c2d9cbf67cf4095596588a56aecdde6702137805
         x-checker-data:
           type: html
           url: https://webkitgtk.org/releases/
@@ -56,7 +56,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/Jenyay/outwiker
-        commit: 338038a4cc601f08ec9dfcc2d79f92c9a3e01845
+        commit: a428811bd581ea0953f9a5080cb7ba22170c7f09
     build-commands:
       - make -f Makefile.flatpak install
   - python3-numpy.json
