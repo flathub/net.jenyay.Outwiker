@@ -1,6 +1,6 @@
 app-id: net.jenyay.Outwiker
 runtime: org.gnome.Platform
-runtime-version: '47'
+runtime-version: '48'
 sdk: org.gnome.Sdk
 command: outwiker
 rename-icon: net.jenyay.Outwiker
@@ -26,31 +26,31 @@ modules:
         sha256: 43ce0f02ecdcdc723b2475575563ddb192e988c886d368260bc0a63aee3ac400
     cleanup:
       - '*'
-  - name: webkit2gtk-4.0
-    sources:
-      - type: archive
-        url: https://webkitgtk.org/releases/webkitgtk-2.48.1.tar.xz
-        sha256: 98efdf21c4cdca0fe0b73ab5a8cb52093b5aa52d9b1b016a93f71dbfa1eb258f
-        x-checker-data:
-          type: html
-          url: https://webkitgtk.org/releases/
-          version-pattern: LATEST-STABLE-(\d[\.\d]+\d)
-          url-template: https://webkitgtk.org/releases/webkitgtk-$version.tar.xz
-    buildsystem: cmake-ninja
-    config-opts:
-      - -DPORT=GTK
-      - -DCMAKE_BUILD_TYPE=Release
-      - -DENABLE_BUBBLEWRAP_SANDBOX=OFF
-      - -DENABLE_DOCUMENTATION=OFF
-      - -DENABLE_GAMEPAD=OFF
-      - -DENABLE_WEBDRIVER=OFF
-      - -DUSE_SOUP2=ON
-      - -DUSE_JPEGXL=ON
-      - -DUSE_GTK4=OFF
-      - -DUSE_LIBBACKTRACE=OFF
-      - -DENABLE_SPEECH_SYNTHESIS=OFF
-    modules:
-      - shared-modules/libsoup/libsoup-2.4.json
+  #- name: webkit2gtk-4.0
+  #  sources:
+  #    - type: archive
+  #      url: https://webkitgtk.org/releases/webkitgtk-2.48.1.tar.xz
+  #      sha256: 98efdf21c4cdca0fe0b73ab5a8cb52093b5aa52d9b1b016a93f71dbfa1eb258f
+  #      x-checker-data:
+  #        type: html
+  #        url: https://webkitgtk.org/releases/
+  #        version-pattern: LATEST-STABLE-(\d[\.\d]+\d)
+  #        url-template: https://webkitgtk.org/releases/webkitgtk-$version.tar.xz
+  #  buildsystem: cmake-ninja
+  #  config-opts:
+  #    - -DPORT=GTK
+  #    - -DCMAKE_BUILD_TYPE=Release
+  #    - -DENABLE_BUBBLEWRAP_SANDBOX=OFF
+  #    - -DENABLE_DOCUMENTATION=OFF
+  #    - -DENABLE_GAMEPAD=OFF
+  #    - -DENABLE_WEBDRIVER=OFF
+  #    - -DUSE_SOUP2=ON
+  #    - -DUSE_JPEGXL=ON
+  #    - -DUSE_GTK4=OFF
+  #    - -DUSE_LIBBACKTRACE=OFF
+  #    - -DENABLE_SPEECH_SYNTHESIS=OFF
+  #  modules:
+  #    - shared-modules/libsoup/libsoup-2.4.json
   - name: outwiker
     buildsystem: simple
     no-autogen: true
