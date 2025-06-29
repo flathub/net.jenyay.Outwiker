@@ -60,7 +60,7 @@ modules:
         commit: 6ac8b21f4da90fa0ad24fe4c4993ef46a5493daa
     build-commands:
       - make -f Makefile.flatpak install
-  - python3-numpy.json
+  #- python3-numpy.json
   - python3-requirements.json
   - name: cacheman
     buildsystem: simple
