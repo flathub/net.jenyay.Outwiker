@@ -1,6 +1,6 @@
 app-id: net.jenyay.Outwiker
 runtime: org.gnome.Platform
-runtime-version: '46'
+runtime-version: '48'
 sdk: org.gnome.Sdk
 command: outwiker
 rename-icon: net.jenyay.Outwiker
@@ -26,40 +26,15 @@ modules:
         sha256: 43ce0f02ecdcdc723b2475575563ddb192e988c886d368260bc0a63aee3ac400
     cleanup:
       - '*'
-  - name: webkit2gtk-4.0
-    sources:
-      - type: archive
-        url: https://webkitgtk.org/releases/webkitgtk-2.46.5.tar.xz
-        sha256: bad4020bb0cfb3e740df3082c2d9cbf67cf4095596588a56aecdde6702137805
-        x-checker-data:
-          type: html
-          url: https://webkitgtk.org/releases/
-          version-pattern: LATEST-STABLE-(\d[\.\d]+\d)
-          url-template: https://webkitgtk.org/releases/webkitgtk-$version.tar.xz
-    buildsystem: cmake-ninja
-    config-opts:
-      - -DPORT=GTK
-      - -DCMAKE_BUILD_TYPE=Release
-      - -DENABLE_BUBBLEWRAP_SANDBOX=OFF
-      - -DENABLE_DOCUMENTATION=OFF
-      - -DENABLE_GAMEPAD=OFF
-      - -DENABLE_WEBDRIVER=OFF
-      - -DUSE_SOUP2=ON
-      - -DUSE_JPEGXL=ON
-      - -DUSE_GTK4=OFF
-      - -DUSE_LIBBACKTRACE=OFF
-    modules:
-      - shared-modules/libsoup/libsoup-2.4.json
   - name: outwiker
     buildsystem: simple
     no-autogen: true
     sources:
       - type: git
         url: https://github.com/Jenyay/outwiker
-        commit: a428811bd581ea0953f9a5080cb7ba22170c7f09
+        commit: 500ff6ca15ba8a76af716b61613fb82c8b87f69b
     build-commands:
       - make -f Makefile.flatpak install
-  - python3-numpy.json
   - python3-requirements.json
   - name: cacheman
     buildsystem: simple
