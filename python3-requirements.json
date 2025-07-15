@@ -105,13 +105,13 @@
             "name": "python3-rcssmin",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"rcssmin==1.2.0\" --no-build-isolation"
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"rcssmin==1.2.1\" --no-build-isolation"
             ],
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/d6/eb/699acc040290f6c5b76bc9fdd68185587213319441c049dc702b2ea74f1a/rcssmin-1.2.0.tar.gz",
-                    "sha256": "f436872412cfa6f04fff990c6322246b13aa389f60323b963583ed6102d7c84c"
+                    "url": "https://files.pythonhosted.org/packages/ce/1f/7201775c62911f17dc510560196160519185abad0357dc30748e884f13c6/rcssmin-1.2.1.tar.gz",
+                    "sha256": "b35c0c89cdac8fc356c2b0985f3e534e85cc18d1971d902d1eac7fe6b4ff566c"
                 }
             ]
         }
