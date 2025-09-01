@@ -32,7 +32,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/Jenyay/outwiker
-        commit: 9df9f9dd373bb83e2997e684885df81f4e9d9b88
+        commit: 96053ff976955ba0957ef47c7651245075c63fcd
     build-commands:
       - make -f Makefile.flatpak install
   - python3-requirements.json
