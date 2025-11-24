@@ -65,7 +65,8 @@ modules:
     build-commands:
       - ls -R /app/lib/python*/site-packages | grep setuptools
       - python -c "import setuptools; print(setuptools.__version__)"
-      - python -m pip install . --prefix=${FLATPAK_DEST}
+      #- python -m pip install . --prefix=${FLATPAK_DEST}
+      - python3 setup.py install --prefix=${FLATPAK_DEST}
     sources:
       - type: git
         url: https://github.com/Jenyay/cython_hunspell
