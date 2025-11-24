@@ -41,7 +41,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/Jenyay/outwiker
-        commit: 34ba8ab7e0603b978292bb72c30add864f450cc4
+        commit: d824da4473673e3bd7ae652ba8e1742aff9270fd
     build-commands:
       - make -f Makefile.flatpak install
   #- name: cacheman
