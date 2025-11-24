@@ -29,7 +29,7 @@ modules:
   - name: python3-setuptools
     buildsystem: simple
     build-commands:
-      - python3 setup.py install --prefix=/app --root=/
+      - python3 setup.py install --prefix=/app
     sources:
       - type: archive
         url: https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz
@@ -37,7 +37,7 @@ modules:
   - name: python3-wheel
     buildsystem: simple
     build-commands:
-      - python3 setup.py install --prefix=/app --root=/
+      - python3 setup.py install --prefix=/app
     sources:
       - type: archive
         url: https://files.pythonhosted.org/packages/8a/98/2d9906746cdc6a6ef809ae6338005b3f21bb568bea3165cfc6a243fdc25c/wheel-0.45.1.tar.gz
@@ -63,6 +63,8 @@ modules:
   - name: cyhunspell
     buildsystem: simple
     build-commands:
+      - ls -R /app/lib/python*/site-packages | grep setuptools
+      - python -c "import setuptools; print(setuptools.__version__)"
       - python -m pip install . --prefix=${FLATPAK_DEST}
     sources:
       - type: git
