@@ -29,7 +29,7 @@ modules:
   - name: python3-setuptools
     buildsystem: simple
     build-commands:
-      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} setuptools==80.9.0 --no-build-isolation
+      - pip3 install --verbose --prefix=/app --root=/
     sources:
       - type: archive
         url: https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz
