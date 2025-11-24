@@ -100,6 +100,25 @@
                     "sha256": "b35c0c89cdac8fc356c2b0985f3e534e85cc18d1971d902d1eac7fe6b4ff566c"
                 }
             ]
+        },
+        {
+            "name": "python3-cacheman",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"cacheman==2.2.0\" --no-build-isolation"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/bb/b1/3a64d6731e72e0d82964214d26ec312f76c016ef74cbb43ea289d609b7b0/CacheMan-2.2.0-py2.py3-none-any.whl",
+                    "sha256": "d41529ac09dfe34eec388def50fdba64bec83ce1c2325ed9eddc4ffc6e664add"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/1f/5a/07871137bb752428aa4b659f910b399ba6f291156bdea939be3e96cae7cb/psutil-6.1.1.tar.gz",
+                    "sha256": "cf8496728c18f2d0b45198f06895be52f36611711746b7f30c464b422b50e2f5"
+                }
+            ]
         }
     ]
 }

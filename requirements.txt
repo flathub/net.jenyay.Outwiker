@@ -5,3 +5,4 @@ idna>=3.10
 pyparsing==3.1.4
 psutil==6.1.1
 rcssmin==1.2.1
+cacheman==2.2.0
