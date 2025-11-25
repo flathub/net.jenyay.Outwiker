@@ -19,14 +19,24 @@ modules:
     no-autogen: true
     make-install-args:
       - prefix=${FLATPAK_DEST}
-
     sources:
       - type: archive
         url: https://dotat.at/prog/unifdef/unifdef-2.12.tar.xz
         sha256: 43ce0f02ecdcdc723b2475575563ddb192e988c886d368260bc0a63aee3ac400
     cleanup:
       - '*'
+
   - python3-requirements.json
+
+  - name: chunspell_fork_fork
+    buildsystem: simple
+    sources:
+      - type: git
+        url: https://github.com/Jenyay/chunspell_fork_fork
+        commit: 975b7f45c47b1c7da581f12cba7c2de198c7ff51
+    build-commands:
+      - python -m pip install . --prefix=${FLATPAK_DEST} --no-build-isolation
+
   - name: outwiker
     buildsystem: simple
     no-autogen: true
