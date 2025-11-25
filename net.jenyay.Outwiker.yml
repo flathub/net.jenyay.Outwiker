@@ -33,14 +33,6 @@ modules:
     sources:
       - type: git
         url: https://github.com/Jenyay/outwiker
-        commit: d824da4473673e3bd7ae652ba8e1742aff9270fd
+        commit: 69157d7b560f5f0f65e18742a3c77a9cdf8df0b9
     build-commands:
       - make -f Makefile.flatpak install
-  - name: cyhunspell
-    buildsystem: simple
-    build-commands:
-      - python -m pip install . --prefix=${FLATPAK_DEST} --no-build-isolation
-    sources:
-      - type: git
-        url: https://github.com/Jenyay/cython_hunspell
-        commit: 76a620875ba681a800b0f5ab2be16bf684bae385
