@@ -33,7 +33,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/Jenyay/chunspell_fork_fork
-        commit: 975b7f45c47b1c7da581f12cba7c2de198c7ff51
+        commit: 1e2ac992e78a25c38c441d706939c1459a176aa9
     build-commands:
       - python -m pip install . --prefix=${FLATPAK_DEST} --no-build-isolation
 
