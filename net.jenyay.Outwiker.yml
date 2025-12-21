@@ -19,36 +19,30 @@ modules:
     no-autogen: true
     make-install-args:
       - prefix=${FLATPAK_DEST}
-
     sources:
       - type: archive
         url: https://dotat.at/prog/unifdef/unifdef-2.12.tar.xz
         sha256: 43ce0f02ecdcdc723b2475575563ddb192e988c886d368260bc0a63aee3ac400
     cleanup:
       - '*'
+
+  - python3-requirements.json
+
+  - name: chunspell_fork_fork
+    buildsystem: simple
+    sources:
+      - type: git
+        url: https://github.com/Jenyay/chunspell_fork_fork
+        commit: 1e2ac992e78a25c38c441d706939c1459a176aa9
+    build-commands:
+      - python -m pip install . --prefix=${FLATPAK_DEST} --no-build-isolation
+
   - name: outwiker
     buildsystem: simple
     no-autogen: true
     sources:
       - type: git
         url: https://github.com/Jenyay/outwiker
-        commit: 9a9e1145f2b59c16a360cf8ce27326b84191e14e
+        commit: bab7e0a6b3c6780586c6d863b4019139b69e6aac
     build-commands:
       - make -f Makefile.flatpak install
-  - python3-requirements.json
-  - name: cacheman
-    buildsystem: simple
-    build-commands:
-      - python -m pip install . --prefix=${FLATPAK_DEST}
-    sources:
-      - type: git
-        url: https://github.com/Jenyay/py_cache_manager
-        commit: aa7fa33dcbc30dbd6b2e62cade5f371f6dbbe2cb
-  - name: cyhunspell
-    buildsystem: simple
-    build-commands:
-      - python -m pip install . --prefix=${FLATPAK_DEST}
-    sources:
-      - type: git
-        url: https://github.com/Jenyay/cython_hunspell
-        commit: 76a620875ba681a800b0f5ab2be16bf684bae385
