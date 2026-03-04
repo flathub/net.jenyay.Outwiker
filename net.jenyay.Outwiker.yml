@@ -12,6 +12,7 @@ finish-args:
   - --device=dri
   - --socket=pulseaudio
   - --filesystem=host
+  - --env=GDK_BACKEND=wayland,x11
 modules:
   # Borrowed from: https://github.com/flathub/in.cinny.Cinny/blob/master/in.cinny.Cinny.yml
 
