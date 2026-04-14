@@ -17,7 +17,7 @@ modules:
   - name: python312
     buildsystem: simple
     build-commands:
-      - ./configure --prefix=/app/python312 --enable-optimizations
+      - ./configure --prefix=/app --enable-optimizations --with-ensurepip=install
       - make -j$(nproc)
       - make install
     sources:
@@ -25,51 +25,39 @@ modules:
         url: https://www.python.org/ftp/python/3.12.7/Python-3.12.7.tgz
         sha256: 73ac8fe780227bf371add8373c3079f42a0dc62deff8d612cd15a618082ab623
 
-  # Borrowed from: https://github.com/flathub/in.cinny.Cinny/blob/master/in.cinny.Cinny.yml
-  #- name: unifdef
-  #  no-autogen: true
-  #  make-install-args:
-  #    - prefix=${FLATPAK_DEST}
-  #  sources:
-  #    - type: archive
-  #      url: https://dotat.at/prog/unifdef/unifdef-2.12.tar.xz
-  #      sha256: 43ce0f02ecdcdc723b2475575563ddb192e988c886d368260bc0a63aee3ac400
-  #  cleanup:
-  #    - '*'
-
-  #- name: python3-setuptools
-  #  buildsystem: simple
-  #  build-commands:
-  #    - /app/python312/bin/python3.12 -m pip install --prefix=${FLATPAK_DEST}  --no-deps setuptools==82.0.1
-  #  sources:
-  #    - type: file
-  #      url: https://files.pythonhosted.org/packages/4f/db/cfac1baf10650ab4d1c111714410d2fbb77ac5a616db26775db562c8fab2/setuptools-82.0.1.tar.gz
-  #      sha256: 7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9
-
   - python3-setuptools.json
 
   - name: debug-info
     buildsystem: simple
+    build-options:
+      env:
+        PYTHONPATH: /app/lib/python3.12/site-packages
     build-commands:
-      - /app/python312/bin/python3.12 --version
+      - python3.12 --version
       - echo "PYTHONPATH is: $PYTHONPATH"
       - echo "FLATPAK_DEST is: $FLATPAK_DEST"
-      - /app/python312/bin/python3.12 -m pip list
+      - python3.12 -m pip list
 
   - python3-requirements.json
 
   - name: chunspell_fork_fork
     buildsystem: simple
+    build-options:
+      env:
+        PYTHONPATH: /app/lib/python3.12/site-packages
     sources:
       - type: git
         url: https://github.com/Jenyay/chunspell_fork_fork
         commit: 1e2ac992e78a25c38c441d706939c1459a176aa9
     build-commands:
-      - /app/python312/bin/python3.12 -m pip install . --prefix=${FLATPAK_DEST} 
+      - python3.12 -m pip install . --prefix=${FLATPAK_DEST} --no-build-isolation
 
   - name: outwiker
     buildsystem: simple
     no-autogen: true
+    build-options:
+      env:
+        PYTHONPATH: /app/lib/python3.12/site-packages
     sources:
       - type: git
         url: https://github.com/Jenyay/outwiker

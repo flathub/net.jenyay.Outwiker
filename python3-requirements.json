@@ -12,7 +12,7 @@
             "name": "python3-attrdict3",
             "buildsystem": "simple",
             "build-commands": [
-                "/app/python312/bin/python3.12 -m pip install -vvv --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"attrdict3==2.0.2\" "
+                "python3.12 -m pip install -vvv --ignore-installed --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"attrdict3==2.0.2\" --no-build-isolation "
             ],
             "sources": [
                 {
@@ -31,7 +31,7 @@
             "name": "python3-wxPython",
             "buildsystem": "simple",
             "build-commands": [
-                "/app/python312/bin/python3.12 -m pip install -vvv --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"wxPython==4.2.2\" "
+                "python3.12 -m pip install -vvv --ignore-installed --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"wxPython==4.2.2\" --no-build-isolation "
             ],
             "sources": [
                 {
@@ -50,7 +50,7 @@
             "name": "python3-Pillow",
             "buildsystem": "simple",
             "build-commands": [
-                "/app/python312/bin/python3.12 -m pip install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"Pillow==10.4.0\" "
+                "python3.12 -m pip install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"Pillow==10.4.0\" --no-build-isolation "
             ],
             "sources": [
                 {
@@ -64,7 +64,7 @@
             "name": "python3-idna",
             "buildsystem": "simple",
             "build-commands": [
-                "/app/python312/bin/python3.12 -m pip install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"idna>=3.10\" "
+                "python3.12 -m pip install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"idna>=3.10\" --no-build-isolation "
             ],
             "sources": [
                 {
@@ -78,7 +78,7 @@
             "name": "python3-pyparsing",
             "buildsystem": "simple",
             "build-commands": [
-                "/app/python312/bin/python3.12 -m pip install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pyparsing==3.1.4\" "
+                "python3.12 -m pip install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pyparsing==3.1.4\" --no-build-isolation "
             ],
             "sources": [
                 {
@@ -92,7 +92,7 @@
             "name": "python3-psutil",
             "buildsystem": "simple",
             "build-commands": [
-                "/app/python312/bin/python3.12 -m pip install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"psutil==6.1.1\" "
+                "python3.12 -m pip install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"psutil==6.1.1\" --no-build-isolation "
             ],
             "sources": [
                 {
@@ -106,7 +106,7 @@
             "name": "python3-rcssmin",
             "buildsystem": "simple",
             "build-commands": [
-                "/app/python312/bin/python3.12 -m pip install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"rcssmin==1.2.1\" "
+                "python3.12 -m pip install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"rcssmin==1.2.1\" --no-build-isolation "
             ],
             "sources": [
                 {

@@ -1,26 +1,19 @@
 {
-    "name": "python3-requirements",
+    "name": "python3-setuptools",
     "buildsystem": "simple",
-    "build-commands": [],
     "build-options": {
         "env": {
             "PYTHONPATH": "/app/lib/python3.12/site-packages"
         }
     },
-    "modules": [
+    "build-commands": [
+        "python3.12 -m pip install -vvv --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"setuptools==82.0.1\" "
+    ],
+    "sources": [
         {
-            "name": "python3-setuptools",
-            "buildsystem": "simple",
-            "build-commands": [
-                "/app/python312/bin/python3.12 -m pip install -vvv --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"setuptools==82.0.1\" "
-            ],
-            "sources": [
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/4f/db/cfac1baf10650ab4d1c111714410d2fbb77ac5a616db26775db562c8fab2/setuptools-82.0.1.tar.gz",
-                    "sha256": "7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9"
-                }
-            ]
+            "type": "archive",
+            "url": "https://files.pythonhosted.org/packages/4f/db/cfac1baf10650ab4d1c111714410d2fbb77ac5a616db26775db562c8fab2/setuptools-82.0.1.tar.gz",
+            "sha256": "7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9"
         }
     ]
 }
