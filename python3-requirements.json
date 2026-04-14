@@ -2,12 +2,17 @@
     "name": "python3-requirements",
     "buildsystem": "simple",
     "build-commands": [],
+    "build-options": {
+        "env": {
+            "PYTHONPATH": "/app/python312/lib/python3.12/site-packages"
+        }
+    },
     "modules": [
         {
             "name": "python3-attrdict3",
             "buildsystem": "simple",
             "build-commands": [
-                "/app/python312/bin/python3.12 -m pip install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"attrdict3==2.0.2\" "
+                "/app/python312/bin/python3.12 -m pip install -vvv --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"attrdict3==2.0.2\" "
             ],
             "sources": [
                 {
@@ -26,7 +31,7 @@
             "name": "python3-wxPython",
             "buildsystem": "simple",
             "build-commands": [
-                "/app/python312/bin/python3.12 -m pip install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"wxPython==4.2.2\" "
+                "/app/python312/bin/python3.12 -m pip install -vvv --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"wxPython==4.2.2\" "
             ],
             "sources": [
                 {
