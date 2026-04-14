@@ -2,6 +2,11 @@
     "name": "python3-requirements",
     "buildsystem": "simple",
     "build-commands": [],
+    "build-options": {
+        "env": {
+            "PYTHONPATH": "/app/python312/lib/python3.12/site-packages"
+        }
+    },
     "modules": [
         {
             "name": "python3-attrdict3",

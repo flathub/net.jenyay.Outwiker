@@ -12,6 +12,7 @@ finish-args:
   - --device=dri
   - --socket=pulseaudio
   - --filesystem=host
+  - --env=PYTHONPATH=/app/python312/lib/python3.12/site-packages
 modules:
   - name: python312
     buildsystem: simple
