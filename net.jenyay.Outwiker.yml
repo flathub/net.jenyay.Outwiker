@@ -36,6 +36,11 @@ modules:
     cleanup:
       - '*'
 
+  - name: python3-setuptools
+    buildsystem: simple
+    build-commands:
+      - /app/python312/bin/python3.12 -m pip install --prefix=${FLATPAK_DEST} --no-build-isolation --no-deps setuptools==82.0.1
+
   - python3-requirements.json
 
   - name: chunspell_fork_fork
