@@ -45,7 +45,7 @@ modules:
         url: https://github.com/Jenyay/chunspell_fork_fork
         commit: 1e2ac992e78a25c38c441d706939c1459a176aa9
     build-commands:
-      - python -m pip install . --prefix=${FLATPAK_DEST} --no-build-isolation
+      - /app/python312/bin/python3.12 -m pip install . --prefix=${FLATPAK_DEST} --no-build-isolation
 
   - name: outwiker
     buildsystem: simple
@@ -53,6 +53,6 @@ modules:
     sources:
       - type: git
         url: https://github.com/Jenyay/outwiker
-        commit: bd11f9a9fb32a2048d55a4bff1cb765ad25c399b
+        commit: 6429fcb89263f39252b7adc14446b7a23bd110ea
     build-commands:
       - make -f Makefile.flatpak install
