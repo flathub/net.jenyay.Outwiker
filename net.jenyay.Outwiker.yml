@@ -13,8 +13,18 @@ finish-args:
   - --socket=pulseaudio
   - --filesystem=host
 modules:
-  # Borrowed from: https://github.com/flathub/in.cinny.Cinny/blob/master/in.cinny.Cinny.yml
+  - name: python312
+    buildsystem: simple
+    build-commands:
+      - ./configure --prefix=/app/python312 --enable-optimizations
+      - make -j$(nproc)
+      - make install
+    sources:
+      - type: archive
+        url: https://www.python.org/ftp/python/3.12.7/Python-3.12.7.tgz
+        sha256: 73ac8fe780227bf371add8373c3079f42a0dc62deff8d612cd15a618082ab623
 
+  # Borrowed from: https://github.com/flathub/in.cinny.Cinny/blob/master/in.cinny.Cinny.yml
   - name: unifdef
     no-autogen: true
     make-install-args:
