@@ -4,7 +4,7 @@
     "build-commands": [],
     "build-options": {
         "env": {
-            "PYTHONPATH": "/app/python312/lib/python3.12/site-packages"
+            "PYTHONPATH": "/app/lib/python3.12/site-packages"
         }
     },
     "modules": [
