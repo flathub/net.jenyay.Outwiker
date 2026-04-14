@@ -39,7 +39,7 @@ modules:
   #- name: python3-setuptools
   #  buildsystem: simple
   #  build-commands:
-  #    - /app/python312/bin/python3.12 -m pip install --prefix=${FLATPAK_DEST} --no-build-isolation --no-deps setuptools==82.0.1
+  #    - /app/python312/bin/python3.12 -m pip install --prefix=${FLATPAK_DEST}  --no-deps setuptools==82.0.1
   #  sources:
   #    - type: file
   #      url: https://files.pythonhosted.org/packages/4f/db/cfac1baf10650ab4d1c111714410d2fbb77ac5a616db26775db562c8fab2/setuptools-82.0.1.tar.gz
@@ -56,7 +56,7 @@ modules:
         url: https://github.com/Jenyay/chunspell_fork_fork
         commit: 1e2ac992e78a25c38c441d706939c1459a176aa9
     build-commands:
-      - /app/python312/bin/python3.12 -m pip install . --prefix=${FLATPAK_DEST} --no-build-isolation
+      - /app/python312/bin/python3.12 -m pip install . --prefix=${FLATPAK_DEST} 
 
   - name: outwiker
     buildsystem: simple

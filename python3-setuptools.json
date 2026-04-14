@@ -7,7 +7,7 @@
             "name": "python3-setuptools",
             "buildsystem": "simple",
             "build-commands": [
-                "/app/python312/bin/python3.12 -m pip install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"setuptools==82.0.1\" --no-build-isolation"
+                "/app/python312/bin/python3.12 -m pip install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"setuptools==82.0.1\" "
             ],
             "sources": [
                 {
