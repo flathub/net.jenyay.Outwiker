@@ -48,6 +48,14 @@ modules:
 
   - python3-setuptools.json
 
+  - name: debug-info
+    buildsystem: simple
+    build-commands:
+      - /app/python312/bin/python3.12 --version
+      - echo "PYTHONPATH is: $PYTHONPATH"
+      - echo "FLATPAK_DEST is: $FLATPAK_DEST"
+      - /app/python312/bin/python3.12 -m pip list
+
   - python3-requirements.json
 
   - name: chunspell_fork_fork
