@@ -1,0 +1,19 @@
+{
+    "name": "python3-wheel",
+    "buildsystem": "simple",
+    "build-options": {
+        "env": {
+            "PYTHONPATH": "/app/lib/python3.12/site-packages"
+        }
+    },
+    "build-commands": [
+        "python3.12 -m pip install -vvv --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"wheel==0.46.3\" "
+    ],
+    "sources": [
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/89/24/a2eb353a6edac9a0303977c4cb048134959dd2a51b48a269dfc9dde00c8a/wheel-0.46.3.tar.gz",
+            "sha256": "e3e79874b07d776c40bd6033f8ddf76a7dad46a7b8aa1b2787a83083519a1803"
+        }
+    ]
+}

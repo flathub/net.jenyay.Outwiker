@@ -38,6 +38,8 @@ modules:
       - echo "FLATPAK_DEST is: $FLATPAK_DEST"
       - python3.12 -m pip list
 
+  - python3-wheel.json
+
   - python3-requirements.json
 
   - name: chunspell_fork_fork
