@@ -60,11 +60,6 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-22.04/wxPython-4.2.2-cp312-cp312-linux_x86_64.whl",
-                    "sha256": "8c0cb156f0a6ec88cf5a776d4acf55583846a2d6a16c988c9fd3a082363ad251"
-                },
-                {
-                    "type": "file",
                     "url": "https://files.pythonhosted.org/packages/a4/f5/8c272764770f47fd419cc2eff4c4fa1c0681c71bcc2f3158b3a83d1339ff/wxPython-4.2.2.tar.gz",
                     "sha256": "5dbcb0650f67fdc2c5965795a255ffaa3d7b09fb149aa8da2d0d9aa44e38e2ba"
                 }
