@@ -7,7 +7,7 @@
         }
     },
     "build-commands": [
-        "python3.12 -m pip install -vvv --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"setuptools==69.5.1\" "
+        "python3.12 -m pip install -vvv --ignore-installed --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"setuptools==69.5.1\" "
     ],
     "sources": [
         {

@@ -25,20 +25,33 @@ modules:
         url: https://www.python.org/ftp/python/3.12.7/Python-3.12.7.tgz
         sha256: 73ac8fe780227bf371add8373c3079f42a0dc62deff8d612cd15a618082ab623
 
-  - python3-setuptools.json
-
-  - name: debug-info
+  - name: debug-info-1
     buildsystem: simple
     build-options:
       env:
         PYTHONPATH: /app/lib/python3.12/site-packages
     build-commands:
-      - python3.12 --version
-      - echo "PYTHONPATH is: $PYTHONPATH"
-      - echo "FLATPAK_DEST is: $FLATPAK_DEST"
       - python3.12 -m pip list
 
   - python3-wheel.json
+
+  - name: debug-info-3
+    buildsystem: simple
+    build-options:
+      env:
+        PYTHONPATH: /app/lib/python3.12/site-packages
+    build-commands:
+      - python3.12 -m pip list
+
+  - python3-setuptools.json
+
+  - name: debug-info-3
+    buildsystem: simple
+    build-options:
+      env:
+        PYTHONPATH: /app/lib/python3.12/site-packages
+    build-commands:
+      - python3.12 -m pip list
 
   - python3-requirements.json
 
