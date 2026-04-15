@@ -33,17 +33,17 @@ modules:
     build-commands:
       - python3.12 -m pip list
 
-  #- python3-wheel.json
-
-  #- name: debug-info-2
-  #  buildsystem: simple
-  #  build-options:
-  #    env:
-  #      PYTHONPATH: /app/lib/python3.12/site-packages
-  #  build-commands:
-  #    - python3.12 -m pip list
-
   - python3-setuptools.json
+
+  - python3-wheel.json
+
+  - name: debug-info-2
+    buildsystem: simple
+    build-options:
+      env:
+        PYTHONPATH: /app/lib/python3.12/site-packages
+    build-commands:
+      - python3.12 -m pip list
 
   - name: debug-info-3
     buildsystem: simple
