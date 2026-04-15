@@ -33,9 +33,9 @@ modules:
     build-commands:
       - python3.12 -m pip list
 
-  - python3-setuptools.json
-
   - python3-wheel.json
+
+  - python3-setuptools.json
 
   - name: debug-info-2
     buildsystem: simple
