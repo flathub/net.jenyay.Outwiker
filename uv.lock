@@ -4,15 +4,15 @@ requires-python = ">=3.12"
 
 [[package]]
 name = "flatpak-pip-generator"
-version = "25.0.0"
+version = "26.4.13"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "pyyaml" },
     { name = "requirements-parser" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/db/0b/012c5fadccab3955b90b5e1bc59a0f80c83c3974d4d3807f5d5aa79381c1/flatpak_pip_generator-25.0.0.tar.gz", hash = "sha256:eb8d49e98f50ccd4279a3e8fa11f2475c2234cc8c7030e19522a6451f86b873c", size = 8008, upload-time = "2025-04-26T09:19:45.14Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/93/56/9711228444268c4a98528f4ec900c0aef19c42e0578e4d02af4f4b4da361/flatpak_pip_generator-26.4.13.tar.gz", hash = "sha256:7ee8778ee4bb1122cded04f122b6a7a67806f96432d879618b5b4a8df4351632", size = 12904, upload-time = "2026-04-13T19:28:38.596Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/29/57/993c168f9bbc6f2d5136e7f4bd8cd81413447034db8194e46d6b289196e2/flatpak_pip_generator-25.0.0-py3-none-any.whl", hash = "sha256:2ef45b2c6568a8efacffda33574273642c3b2ecd22c154d870a2d84514ecc962", size = 8579, upload-time = "2025-04-26T09:19:43.603Z" },
+    { url = "https://files.pythonhosted.org/packages/eb/33/aacef75efe97fd22c8722763aff0bbef2fb06f4137b5f8d65496fe7624dd/flatpak_pip_generator-26.4.13-py3-none-any.whl", hash = "sha256:4f25639207febf171dab14358e01384b82aadf25a6db57ff477df922c644699f", size = 14584, upload-time = "2026-04-13T19:28:37.466Z" },
 ]
 
 [[package]]
@@ -24,7 +24,7 @@ dependencies = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "flatpak-pip-generator", specifier = "==25.0.0" }]
+requires-dist = [{ name = "flatpak-pip-generator", specifier = "==26.4.13" }]
 
 [[package]]
 name = "packaging"
