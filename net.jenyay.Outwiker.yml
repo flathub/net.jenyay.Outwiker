@@ -29,8 +29,8 @@ modules:
   - name: webkit2gtk-4.0
     sources:
       - type: archive
-        url: https://webkitgtk.org/releases/webkitgtk-2.46.3.tar.xz
-        sha256: 85e09fa6ff9fea49678ba9975dbc64ea3242833f8f8a7d6a8937b2f292fcb28d
+        url: https://webkitgtk.org/releases/webkitgtk-2.52.3.tar.xz
+        sha256: 5b3e0d174e63dcc28848b1194e0e7448d5948c3c2427ecd931c2c5be5261aebb
         x-checker-data:
           type: html
           url: https://webkitgtk.org/releases/
