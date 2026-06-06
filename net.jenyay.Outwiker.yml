@@ -1,6 +1,6 @@
 app-id: net.jenyay.Outwiker
 runtime: org.gnome.Platform
-runtime-version: '46'
+runtime-version: '50'
 sdk: org.gnome.Sdk
 command: outwiker
 rename-icon: net.jenyay.Outwiker
@@ -12,68 +12,42 @@ finish-args:
   - --device=dri
   - --socket=pulseaudio
   - --filesystem=host
+  - --env=PYTHONPATH=/app/lib/python3.12/site-packages
 modules:
-  # Borrowed from: https://github.com/flathub/in.cinny.Cinny/blob/master/in.cinny.Cinny.yml
-
-  - name: unifdef
-    no-autogen: true
-    make-install-args:
-      - prefix=${FLATPAK_DEST}
-
+  - name: python312
+    buildsystem: simple
+    build-commands:
+      - ./configure --prefix=/app --enable-optimizations --with-ensurepip=install
+      - make -j$(nproc)
+      - make install
     sources:
       - type: archive
-        url: https://dotat.at/prog/unifdef/unifdef-2.12.tar.xz
-        sha256: 43ce0f02ecdcdc723b2475575563ddb192e988c886d368260bc0a63aee3ac400
-    cleanup:
-      - '*'
-  - name: webkit2gtk-4.0
+        url: https://www.python.org/ftp/python/3.12.13/Python-3.12.13.tgz
+        sha256: 0816c4761c97ecdb3f50a3924de0a93fd78cb63ee8e6c04201ddfaedca500b0b
+
+  - python3-requirements.json
+
+  - name: chunspell_fork_fork
+    buildsystem: simple
+    build-options:
+      env:
+        PYTHONPATH: /app/lib/python3.12/site-packages
     sources:
-      - type: archive
-        url: https://webkitgtk.org/releases/webkitgtk-2.46.3.tar.xz
-        sha256: 85e09fa6ff9fea49678ba9975dbc64ea3242833f8f8a7d6a8937b2f292fcb28d
-        x-checker-data:
-          type: html
-          url: https://webkitgtk.org/releases/
-          version-pattern: LATEST-STABLE-(\d[\.\d]+\d)
-          url-template: https://webkitgtk.org/releases/webkitgtk-$version.tar.xz
-    buildsystem: cmake-ninja
-    config-opts:
-      - -DPORT=GTK
-      - -DCMAKE_BUILD_TYPE=Release
-      - -DENABLE_BUBBLEWRAP_SANDBOX=OFF
-      - -DENABLE_DOCUMENTATION=OFF
-      - -DENABLE_GAMEPAD=OFF
-      - -DENABLE_WEBDRIVER=OFF
-      - -DUSE_SOUP2=ON
-      - -DUSE_JPEGXL=ON
-      - -DUSE_GTK4=OFF
-      - -DUSE_LIBBACKTRACE=OFF
-    modules:
-      - shared-modules/libsoup/libsoup-2.4.json
+      - type: git
+        url: https://github.com/Jenyay/chunspell_fork_fork
+        commit: 1e2ac992e78a25c38c441d706939c1459a176aa9
+    build-commands:
+      - python3.12 -m pip install . --prefix=${FLATPAK_DEST} --no-build-isolation
+
   - name: outwiker
     buildsystem: simple
     no-autogen: true
+    build-options:
+      env:
+        PYTHONPATH: /app/lib/python3.12/site-packages
     sources:
       - type: git
         url: https://github.com/Jenyay/outwiker
-        commit: e20a7054b08fd55bdf186fbd6ff7df5ffebf45c5
+        commit: 105f26c53fa976b5b419a070968b3928e265fbc7
     build-commands:
       - make -f Makefile.flatpak install
-  - python3-numpy.json
-  - python3-requirements.json
-  - name: cacheman
-    buildsystem: simple
-    build-commands:
-      - python -m pip install . --prefix=${FLATPAK_DEST}
-    sources:
-      - type: git
-        url: https://github.com/Jenyay/py_cache_manager
-        commit: aa7fa33dcbc30dbd6b2e62cade5f371f6dbbe2cb
-  - name: cyhunspell
-    buildsystem: simple
-    build-commands:
-      - python -m pip install . --prefix=${FLATPAK_DEST}
-    sources:
-      - type: git
-        url: https://github.com/Jenyay/cython_hunspell
-        commit: 76a620875ba681a800b0f5ab2be16bf684bae385

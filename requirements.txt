@@ -1,10 +1,7 @@
-attrdict3
-wxPython==4.2.1
-Pillow==10.3.0
-idna>=2.10
-flit_core >=3.2,<4
-pyparsing==3.1.2
-psutil==5.9.8
-future>=0.16.0
-six>=1.10.0
-rcssmin==1.1.2
+attrdict3==2.0.2
+wxPython==4.2.2
+Pillow==10.4.0
+idna>=3.10
+pyparsing==3.1.4
+psutil==6.1.1
+rcssmin==1.2.1
