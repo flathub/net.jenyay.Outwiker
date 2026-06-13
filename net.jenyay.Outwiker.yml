@@ -6,7 +6,10 @@ command: outwiker
 rename-icon: net.jenyay.Outwiker
 finish-args:
   - --share=network
-  - --socket=fallback-x11
+  # Remove for wxPython 4.2.5 and above
+  - --socket=x11
+  # Uncomment for wxPython 4.2.5 and above
+  #- --socket=fallback-x11
   - --socket=wayland
   - --share=ipc
   - --device=dri
