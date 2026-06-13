@@ -9,8 +9,8 @@ finish-args:
   # Remove for wxPython 4.2.5 and above
   - --socket=x11
   # Uncomment for wxPython 4.2.5 and above
+  #- --socket=wayland
   #- --socket=fallback-x11
-  - --socket=wayland
   - --share=ipc
   - --device=dri
   - --socket=pulseaudio
