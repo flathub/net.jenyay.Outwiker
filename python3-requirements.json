@@ -50,7 +50,7 @@
             "name": "python3-appdirs",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"appdirs\" --no-build-isolation"
+                "python3.12 -m pip install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"appdirs\" --no-build-isolation"
             ],
             "sources": [
                 {
@@ -64,7 +64,7 @@
             "name": "python3-attrdict3",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"attrdict3==2.0.2\" --no-build-isolation"
+                "python3.12 -m pip install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"attrdict3==2.0.2\" --no-build-isolation"
             ],
             "sources": [
                 {
@@ -83,7 +83,7 @@
             "name": "python3-idna",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"idna>=3.10\" --no-build-isolation"
+                "python3.12 -m pip install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"idna>=3.10\" --no-build-isolation"
             ],
             "sources": [
                 {
@@ -97,7 +97,7 @@
             "name": "python3-pyparsing",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pyparsing==3.1.4\" --no-build-isolation"
+                "python3.12 -m pip install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pyparsing==3.1.4\" --no-build-isolation"
             ],
             "sources": [
                 {
@@ -111,7 +111,7 @@
             "name": "python3-psutil",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"psutil==6.1.1\" --no-build-isolation"
+                "python3.12 -m pip install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"psutil==6.1.1\" --no-build-isolation"
             ],
             "sources": [
                 {
@@ -125,7 +125,7 @@
             "name": "python3-rcssmin",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"rcssmin==1.2.1\" --no-build-isolation"
+                "python3.12 -m pip install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"rcssmin==1.2.1\" --no-build-isolation"
             ],
             "sources": [
                 {
@@ -139,7 +139,7 @@
             "name": "python3-sip",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"sip==6.15.1\" --no-build-isolation"
+                "python3.12 -m pip install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"sip==6.15.1\" --no-build-isolation"
             ],
             "sources": [
                 {
@@ -153,7 +153,7 @@
             "name": "python3-requests",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"requests>=2.26.0\" --no-build-isolation"
+                "python3.12 -m pip install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"requests>=2.26.0\" --no-build-isolation"
             ],
             "sources": [
                 {
@@ -203,10 +203,24 @@
             ]
         },
         {
+            "name": "python3-cython",
+            "buildsystem": "simple",
+            "build-commands": [
+                "python3.12 -m pip install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"cython==3.0.10\" --no-build-isolation"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/d5/f7/2fdd9205a2eedee7d9b0abbf15944a1151eb943001dbdc5233b1d1cfc34e/Cython-3.0.10.tar.gz",
+                    "sha256": "dcc96739331fb854dcf503f94607576cfe8488066c61ca50dfd55836f132de99"
+                }
+            ]
+        },
+        {
             "name": "python3-wxPython",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"wxPython==4.2.5\" --no-build-isolation"
+                "python3.12 -m pip install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"wxPython==4.2.5\" --no-build-isolation"
             ],
             "sources": [
                 {
