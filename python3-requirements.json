@@ -31,13 +31,13 @@
             "name": "python3-setuptools",
             "buildsystem": "simple",
             "build-commands": [
-                "python3.12 -m pip install -vvv --ignore-installed --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"setuptools==82.0.1\" "
+                "python3.12 -m pip install -vvv --ignore-installed --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"setuptools==81.0.0\" "
             ],
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/4f/db/cfac1baf10650ab4d1c111714410d2fbb77ac5a616db26775db562c8fab2/setuptools-82.0.1.tar.gz",
-                    "sha256": "7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9"
+                    "url": "https://files.pythonhosted.org/packages/0d/1c/73e719955c59b8e424d015ab450f51c0af856ae46ea2da83eba51cc88de1/setuptools-81.0.0.tar.gz",
+                    "sha256": "487b53915f52501f0a79ccfd0c02c165ffe06631443a886740b91af4b7a5845a"
                 },
                 {
                     "type": "file",
