@@ -7,10 +7,10 @@ rename-icon: net.jenyay.Outwiker
 finish-args:
   - --share=network
   # Remove for wxPython 4.2.5 and above
-  - --socket=x11
+  #- --socket=x11
   # Uncomment for wxPython 4.2.5 and above
-  #- --socket=wayland
-  #- --socket=fallback-x11
+  - --socket=wayland
+  - --socket=fallback-x11
   - --share=ipc
   - --device=dri
   - --socket=pulseaudio
@@ -51,6 +51,6 @@ modules:
     sources:
       - type: git
         url: https://github.com/Jenyay/outwiker
-        commit: 89ea46d60c79572d2cf9aeda94948f651675a2c9
+        commit: f447e9bf712ed48b8f71297000caf1f452d08037
     build-commands:
       - make -f Makefile.flatpak install
