@@ -1,6 +1,6 @@
 app-id: net.jenyay.Outwiker
 runtime: org.gnome.Platform
-runtime-version: '50'
+runtime-version: '51'
 sdk: org.gnome.Sdk
 command: outwiker
 rename-icon: net.jenyay.Outwiker
@@ -48,6 +48,6 @@ modules:
     sources:
       - type: git
         url: https://github.com/Jenyay/outwiker
-        commit: 62e00582f4b0554ff79116a800db14e8ca37880e
+        commit: 69470ac0593b4e895fae909d345f507b22f3f678
     build-commands:
       - make -f Makefile.flatpak install
