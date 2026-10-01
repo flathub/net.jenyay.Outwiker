@@ -48,6 +48,6 @@ modules:
     sources:
       - type: git
         url: https://github.com/Jenyay/outwiker
-        commit: 4dcb37900c264b1052f9aac0a22d631c6e7ccca0
+        commit: dc136027af2fdaa4854a754fa23b37d163e2e496
     build-commands:
       - make -f Makefile.flatpak install
