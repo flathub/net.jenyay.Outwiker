@@ -27,17 +27,17 @@ modules:
 
   - python3-requirements.json
 
-  - name: chunspell_fork_fork
-    buildsystem: simple
-    build-options:
-      env:
-        PYTHONPATH: /app/lib/python3.12/site-packages
-    sources:
-      - type: git
-        url: https://github.com/Jenyay/chunspell_fork_fork
-        commit: 1e2ac992e78a25c38c441d706939c1459a176aa9
-    build-commands:
-      - python3.12 -m pip install . --prefix=${FLATPAK_DEST} --no-build-isolation
+  #- name: chunspell_fork_fork
+  #  buildsystem: simple
+  #  build-options:
+  #    env:
+  #      PYTHONPATH: /app/lib/python3.12/site-packages
+  #  sources:
+  #    - type: git
+  #      url: https://github.com/Jenyay/chunspell_fork_fork
+  #      commit: 1e2ac992e78a25c38c441d706939c1459a176aa9
+  #  build-commands:
+  #    - python3.12 -m pip install . --prefix=${FLATPAK_DEST} --no-build-isolation
 
   - name: outwiker
     buildsystem: simple
@@ -48,6 +48,6 @@ modules:
     sources:
       - type: git
         url: https://github.com/Jenyay/outwiker
-        commit: e2a63125097084b794da0fa376b4a4de794b37eb
+        commit: b7f540543995b1a4857d3623547c0ab7fd06dfa0
     build-commands:
       - make -f Makefile.flatpak install

@@ -217,6 +217,25 @@
             ]
         },
         {
+            "name": "python3-chunspell",
+            "buildsystem": "simple",
+            "build-commands": [
+                "python3.12 -m pip install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"chunspell==2.0.5\" --no-build-isolation"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/69/76/6e71f3a21617c6b2337b404f8a0a10652e4eeed8b1a0afffabf714d48cb1/chunspell-2.0.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+                    "sha256": "2d8ab8099bab0f14f68650db67d6da2c4db4fb402daf097240ac87516da65320"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/80/48/9765cfabd137c9fa80d4c03a6dc1f798517ec87dfedae58b1c4d8d187b71/chunspell-2.0.5-cp312-cp312-manylinux_2_26_aarch64.manylinux_2_28_aarch64.whl",
+                    "sha256": "1871a6471fe9d18566887e87f16b17c967ca8c9097864ac3377b4006a2d50eca"
+                }
+            ]
+        },
+        {
             "name": "python3-wxPython",
             "buildsystem": "simple",
             "build-commands": [

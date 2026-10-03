@@ -12,3 +12,4 @@ requests >= 2.26.0
 cython==3.3.0
 Pillow==10.4.0
 wxPython==4.3.1
+chunspell==2.0.5
