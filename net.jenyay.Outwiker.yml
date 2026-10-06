@@ -1,14 +1,11 @@
 app-id: net.jenyay.Outwiker
 runtime: org.gnome.Platform
-runtime-version: '50'
+runtime-version: '51'
 sdk: org.gnome.Sdk
 command: outwiker
 rename-icon: net.jenyay.Outwiker
 finish-args:
   - --share=network
-  # Remove for wxPython 4.2.5 and above
-  #- --socket=x11
-  # Uncomment for wxPython 4.2.5 and above
   - --socket=wayland
   - --socket=fallback-x11
   - --share=ipc
@@ -30,18 +27,6 @@ modules:
 
   - python3-requirements.json
 
-  - name: chunspell_fork_fork
-    buildsystem: simple
-    build-options:
-      env:
-        PYTHONPATH: /app/lib/python3.12/site-packages
-    sources:
-      - type: git
-        url: https://github.com/Jenyay/chunspell_fork_fork
-        commit: 1e2ac992e78a25c38c441d706939c1459a176aa9
-    build-commands:
-      - python3.12 -m pip install . --prefix=${FLATPAK_DEST} --no-build-isolation
-
   - name: outwiker
     buildsystem: simple
     no-autogen: true
@@ -51,6 +36,6 @@ modules:
     sources:
       - type: git
         url: https://github.com/Jenyay/outwiker
-        commit: e8187591fa2dbd6c5c76f7373f4a3e0b4f3a6c12
+        commit: 92cb6f7d9ced7cfb1c2f157337871e0ee77c8ea3
     build-commands:
       - make -f Makefile.flatpak install
