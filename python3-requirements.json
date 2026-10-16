@@ -217,6 +217,20 @@
             ]
         },
         {
+            "name": "python3-numpy",
+            "buildsystem": "simple",
+            "build-commands": [
+                "python3.12 -m pip install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"numpy==2.5.4\" --no-build-isolation"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/95/b0/c7453d0b6e2073c3264468b106ee1563750cecc910965e67357e3698c83e/numpy-2.5.4.tar.gz",
+                    "sha256": "9a94cf751c9ad8ebaa835bcd3d40dacf8534ad086b88c38029b65123c7999d2a"
+                }
+            ]
+        },
+        {
             "name": "python3-wxPython",
             "buildsystem": "simple",
             "build-commands": [
