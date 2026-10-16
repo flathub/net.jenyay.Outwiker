@@ -11,5 +11,5 @@ sip == 6.16.1
 requests >= 2.26.0
 cython==3.3.0
 Pillow==12.3.0
-wxPython==4.3.1
+wxPython==4.3.2
 chunspell==2.0.5
