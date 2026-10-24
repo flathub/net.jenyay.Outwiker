@@ -1,56 +1,30 @@
 app-id: net.jenyay.Outwiker
 runtime: org.gnome.Platform
-runtime-version: '50'
+runtime-version: '51'
 sdk: org.gnome.Sdk
 command: outwiker
 rename-icon: net.jenyay.Outwiker
 finish-args:
   - --share=network
-  # Remove for wxPython 4.2.5 and above
-  #- --socket=x11
-  # Uncomment for wxPython 4.2.5 and above
   - --socket=wayland
   - --socket=fallback-x11
   - --share=ipc
   - --device=dri
   - --socket=pulseaudio
   - --filesystem=host
-  - --env=PYTHONPATH=/app/lib/python3.12/site-packages
 modules:
-  - name: python312
-    buildsystem: simple
-    build-commands:
-      - ./configure --prefix=/app --enable-optimizations --with-ensurepip=install
-      - make -j$(nproc)
-      - make install
-    sources:
-      - type: archive
-        url: https://www.python.org/ftp/python/3.12.13/Python-3.12.13.tgz
-        sha256: 0816c4761c97ecdb3f50a3924de0a93fd78cb63ee8e6c04201ddfaedca500b0b
-
   - python3-requirements.json
-
-  - name: chunspell_fork_fork
-    buildsystem: simple
-    build-options:
-      env:
-        PYTHONPATH: /app/lib/python3.12/site-packages
-    sources:
-      - type: git
-        url: https://github.com/Jenyay/chunspell_fork_fork
-        commit: 1e2ac992e78a25c38c441d706939c1459a176aa9
-    build-commands:
-      - python3.12 -m pip install . --prefix=${FLATPAK_DEST} --no-build-isolation
 
   - name: outwiker
     buildsystem: simple
     no-autogen: true
-    build-options:
-      env:
-        PYTHONPATH: /app/lib/python3.12/site-packages
     sources:
       - type: git
         url: https://github.com/Jenyay/outwiker
-        commit: e8187591fa2dbd6c5c76f7373f4a3e0b4f3a6c12
+        commit: ce6e699d6ad6a6d98853d60af89ffdb922b20120
+      - type: file
+        path: Makefile
+      - type: file
+        path: outwiker
     build-commands:
-      - make -f Makefile.flatpak install
+      - make install
