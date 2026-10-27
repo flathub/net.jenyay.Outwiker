@@ -14,6 +14,7 @@ finish-args:
   - --filesystem=host
 modules:
   - python3-requirements.json
+  - wxpython.json
 
   - name: outwiker
     buildsystem: simple
