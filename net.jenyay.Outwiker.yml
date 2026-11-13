@@ -14,14 +14,14 @@ finish-args:
   - --filesystem=host
 modules:
   - python3-requirements.json
-
+  - wxpython.json
   - name: outwiker
     buildsystem: simple
     no-autogen: true
     sources:
       - type: git
         url: https://github.com/Jenyay/outwiker
-        commit: ce6e699d6ad6a6d98853d60af89ffdb922b20120
+        commit: e9b07fd8eab08b141c0d5f3b5b0d3303231cac7b
       - type: file
         path: Makefile
       - type: file
