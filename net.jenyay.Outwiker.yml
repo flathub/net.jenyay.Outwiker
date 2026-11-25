@@ -21,7 +21,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/Jenyay/outwiker
-        commit: 25253c4c172d131426ec60502a5a4dd6291eb72b
+        commit: f9f30c830b9ca13974e035339d3408e59c09bf31
       - type: file
         path: Makefile
       - type: file
